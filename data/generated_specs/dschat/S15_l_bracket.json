@@ -1,0 +1,63 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0,
+    "thickness": 6.0,
+    "fillet_radius": 3.0,
+    "hole_diameter": 6.5,
+    "hole_count": 2,
+    "edge_round_radius": 1.0
+  },
+  "material": {
+    "name": "6061-T6 Aluminum",
+    "youngs_modulus": 68.9,
+    "poisson_ratio": 0.33,
+    "density": 2700.0,
+    "yield_strength": 276.0,
+    "tensile_strength": 310.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 10,
+      "dof": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 20,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "magnitude": 1000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.6,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "S15",
+    "experiment_timestamp": 1780471132.4770694,
+    "has_injected_defect": true,
+    "attempt": 1,
+    "stage": "correction"
+  },
+  "_meta": {
+    "test_id": "S15",
+    "experiment_timestamp": 1780471138.5081596,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

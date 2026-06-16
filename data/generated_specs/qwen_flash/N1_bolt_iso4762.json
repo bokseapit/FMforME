@@ -1,0 +1,64 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "nominal_diameter": 8,
+    "length": 30,
+    "thread_pitch": 1.25,
+    "head_diameter": 13.0,
+    "head_height": 8.0,
+    "head_chamfer_angle": 30,
+    "socket_size": 6,
+    "thread_length": 22
+  },
+  "material": {
+    "name": "A2-70 stainless steel",
+    "youngs_modulus": 193,
+    "poisson_ratio": 0.29,
+    "density": 8000,
+    "yield_strength": 450,
+    "tensile_strength": 700
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "magnitude": 10000
+    }
+  ],
+  "mesh": {
+    "element_type": "C3D10",
+    "min_jacobian": 0.6,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "N1",
+    "experiment_timestamp": 1780471191.7347357,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N1",
+    "experiment_timestamp": 1780471194.7584293,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

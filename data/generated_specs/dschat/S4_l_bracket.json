@@ -1,0 +1,59 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 5,
+    "hole_diameter": 3,
+    "hole_count": 4,
+    "edge_round_radius": 2
+  },
+  "material": {
+    "name": "Steel",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 250,
+    "tensile_strength": 400
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "ty",
+        "tz"
+      ],
+      "type": "sliding"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "magnitude": 100
+    }
+  ],
+  "mesh": {
+    "element_type": "tetrahedral",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5
+  },
+  "metadata": {
+    "test_id": "S4",
+    "experiment_timestamp": 1780470952.6577957,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S4",
+    "experiment_timestamp": 1780470957.4235997,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

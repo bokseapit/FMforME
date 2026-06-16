@@ -1,0 +1,64 @@
+{
+  "part_type": "ball_bearing",
+  "dimensions": {
+    "bore_diameter": 20.0,
+    "outer_diameter": 47.0,
+    "width": 14.0,
+    "ball_diameter": 7.94,
+    "ball_count": 8,
+    "raceway_groove_radius": 4.1,
+    "cage_type": "riveted_steel",
+    "shield_type": "open"
+  },
+  "material": {
+    "name": "chrome_steel_SAE_52100",
+    "youngs_modulus": 207.0,
+    "poisson_ratio": 0.3,
+    "density": 7810.0,
+    "yield_strength": 1700.0,
+    "tensile_strength": 2100.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 101,
+      "dof": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 202,
+      "direction": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "magnitude": 5000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "hex8",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 4.0
+  },
+  "metadata": {
+    "test_id": "S14",
+    "experiment_timestamp": 1780471116.0681953,
+    "has_injected_defect": true,
+    "attempt": 1,
+    "stage": "correction"
+  },
+  "_meta": {
+    "test_id": "S14",
+    "experiment_timestamp": 1780471123.4570572,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

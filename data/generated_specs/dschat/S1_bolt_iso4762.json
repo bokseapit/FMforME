@@ -1,0 +1,64 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "nominal_diameter": 8.0,
+    "length": 30.0,
+    "thread_pitch": 1.25,
+    "head_diameter": 13.0,
+    "head_height": 8.0,
+    "head_chamfer_angle": 30.0,
+    "socket_size": 6.0,
+    "fillet_radius": 0.6
+  },
+  "material": {
+    "name": "Stainless Steel 304",
+    "youngs_modulus": 193.0,
+    "poisson_ratio": 0.29,
+    "density": 8000.0,
+    "yield_strength": 215.0,
+    "tensile_strength": 505.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        "0",
+        "0",
+        "-1"
+      ],
+      "magnitude": 5000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "S1",
+    "experiment_timestamp": 1780470886.0315607,
+    "has_injected_defect": true,
+    "attempt": 1,
+    "stage": "correction"
+  },
+  "_meta": {
+    "test_id": "S1",
+    "experiment_timestamp": 1780470901.8019576,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

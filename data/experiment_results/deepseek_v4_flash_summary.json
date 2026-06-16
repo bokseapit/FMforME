@@ -1,0 +1,185 @@
+{
+  "experiment_config": {
+    "llm_backend": "deepseek",
+    "llm_model": "deepseek-chat",
+    "natural_runs_per_part": 15,
+    "n_repeats": 2,
+    "total_tests": 141,
+    "n_seeded": 96,
+    "n_seeded_unique": 48,
+    "n_natural": 45,
+    "self_examine_enabled": true
+  },
+  "self_examine": {
+    "n_tests": 141,
+    "direct_passes": 87,
+    "corrected_passes": 52,
+    "failed_after_retries": 2,
+    "total_llm_attempts": 202,
+    "avg_attempts_per_test": 1.4
+  },
+  "seeded_tests": {
+    "n_total": 96,
+    "n_with_expected_defect": 96,
+    "n_detected": 88,
+    "detection_rate": "91.7% [95% CI: 84.4%–95.7%]",
+    "detection_rate_unformatted": {
+      "rate": 0.9167,
+      "rate_pct": 91.7,
+      "n": 96,
+      "successes": 88,
+      "wilson_ci_lo": 0.8441,
+      "wilson_ci_hi": 0.9572,
+      "wilson_ci_pct": "91.7% [95% CI: 84.4%–95.7%]",
+      "ci_range_pct": "84.4%–95.7%",
+      "clopper_pearson_ci": [
+        0.8317,
+        0.9581
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    }
+  },
+  "seeded_per_defect": {
+    "D1": {
+      "rate": 0.75,
+      "rate_pct": 75.0,
+      "n": 16,
+      "successes": 12,
+      "wilson_ci_lo": 0.505,
+      "wilson_ci_hi": 0.8982,
+      "wilson_ci_pct": "75.0% [95% CI: 50.5%–89.8%]",
+      "ci_range_pct": "50.5%–89.8%",
+      "clopper_pearson_ci": [
+        0.4655,
+        0.9062
+      ],
+      "binomial_p_value": 0.0768,
+      "significant_at_05": false
+    },
+    "D2": {
+      "rate": 1.0,
+      "rate_pct": 100.0,
+      "n": 16,
+      "successes": 16,
+      "wilson_ci_lo": 0.8064,
+      "wilson_ci_hi": 1.0,
+      "wilson_ci_pct": "100.0% [95% CI: 80.6%–100.0%]",
+      "ci_range_pct": "80.6%–100.0%",
+      "clopper_pearson_ci": [
+        0.6919,
+        1.0
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    },
+    "D3": {
+      "rate": 1.0,
+      "rate_pct": 100.0,
+      "n": 16,
+      "successes": 16,
+      "wilson_ci_lo": 0.8064,
+      "wilson_ci_hi": 1.0,
+      "wilson_ci_pct": "100.0% [95% CI: 80.6%–100.0%]",
+      "ci_range_pct": "80.6%–100.0%",
+      "clopper_pearson_ci": [
+        0.6919,
+        1.0
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    },
+    "D4": {
+      "rate": 0.75,
+      "rate_pct": 75.0,
+      "n": 16,
+      "successes": 12,
+      "wilson_ci_lo": 0.505,
+      "wilson_ci_hi": 0.8982,
+      "wilson_ci_pct": "75.0% [95% CI: 50.5%–89.8%]",
+      "ci_range_pct": "50.5%–89.8%",
+      "clopper_pearson_ci": [
+        0.4655,
+        0.9062
+      ],
+      "binomial_p_value": 0.0768,
+      "significant_at_05": false
+    },
+    "D5": {
+      "rate": 1.0,
+      "rate_pct": 100.0,
+      "n": 16,
+      "successes": 16,
+      "wilson_ci_lo": 0.8064,
+      "wilson_ci_hi": 1.0,
+      "wilson_ci_pct": "100.0% [95% CI: 80.6%–100.0%]",
+      "ci_range_pct": "80.6%–100.0%",
+      "clopper_pearson_ci": [
+        0.6919,
+        1.0
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    },
+    "D6": {
+      "rate": 1.0,
+      "rate_pct": 100.0,
+      "n": 16,
+      "successes": 16,
+      "wilson_ci_lo": 0.8064,
+      "wilson_ci_hi": 1.0,
+      "wilson_ci_pct": "100.0% [95% CI: 80.6%–100.0%]",
+      "ci_range_pct": "80.6%–100.0%",
+      "clopper_pearson_ci": [
+        0.6919,
+        1.0
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    }
+  },
+  "natural_tests": {
+    "n_total": 45,
+    "n_passed": 45,
+    "n_with_defects": 27,
+    "defect_rate": "60.0% [95% CI: 45.5%–73.0%]",
+    "pass_rate": "100.0% [95% CI: 92.1%–100.0%]",
+    "defect_rate_unformatted": {
+      "rate": 0.6,
+      "rate_pct": 60.0,
+      "n": 45,
+      "successes": 27,
+      "wilson_ci_lo": 0.4545,
+      "wilson_ci_hi": 0.7298,
+      "wilson_ci_pct": "60.0% [95% CI: 45.5%–73.0%]",
+      "ci_range_pct": "45.5%–73.0%",
+      "clopper_pearson_ci": [
+        0.4429,
+        0.7365
+      ],
+      "binomial_p_value": 0.2327,
+      "significant_at_05": false
+    },
+    "pass_rate_unformatted": {
+      "rate": 1.0,
+      "rate_pct": 100.0,
+      "n": 45,
+      "successes": 45,
+      "wilson_ci_lo": 0.9213,
+      "wilson_ci_hi": 1.0,
+      "wilson_ci_pct": "100.0% [95% CI: 92.1%–100.0%]",
+      "ci_range_pct": "92.1%–100.0%",
+      "clopper_pearson_ci": [
+        0.8637,
+        1.0
+      ],
+      "binomial_p_value": 0.0,
+      "significant_at_05": true
+    }
+  },
+  "timing": {
+    "total_experiment_time_s": 1811.7,
+    "avg_llm_time_ms": 4395.0,
+    "avg_monitor_time_ms": 0.123
+  }
+}

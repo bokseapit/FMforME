@@ -1,0 +1,60 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 5,
+    "hole_diameter": 6,
+    "hole_count": 4,
+    "edge_round_radius": 2
+  },
+  "material": {
+    "name": "Steel (JIS SS400)",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 245,
+    "tensile_strength": 400
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        1,
+        2,
+        3
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "magnitude": 1000
+    }
+  ],
+  "mesh": {
+    "element_type": "tet4",
+    "min_jacobian": 0.3,
+    "max_aspect_ratio": 10
+  },
+  "metadata": {
+    "test_id": "N6",
+    "experiment_timestamp": 1780471262.866476,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N6",
+    "experiment_timestamp": 1780471272.2661102,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

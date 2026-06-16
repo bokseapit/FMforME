@@ -1,0 +1,11 @@
+FMforME Experiment Run
+==================================================
+时间:        2026-06-16 23:59:16
+后端:        openai_compatible
+模型:        qwen-flash
+API地址:     https://dashscope.aliyuncs.com/compatible-mode/v1
+自然测试/件: 10
+重复次数:    2
+自我修正:    true
+温度:        1.0
+最大Token:   2048

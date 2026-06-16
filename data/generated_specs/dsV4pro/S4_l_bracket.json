@@ -1,0 +1,55 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0,
+    "thickness": 6.0,
+    "fillet_radius": 5.0,
+    "hole_diameter": 6.0,
+    "hole_count": 4,
+    "edge_round_radius": 2.0
+  },
+  "material": {
+    "name": "Steel A36",
+    "youngs_modulus": 200.0,
+    "poisson_ratio": 0.3,
+    "density": 7850.0,
+    "yield_strength": 250.0,
+    "tensile_strength": 400.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "ty",
+        "tz"
+      ],
+      "type": "sliding"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": "negative z",
+      "magnitude": 1000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "C3D8R",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 4.0
+  },
+  "metadata": {
+    "test_id": "S4",
+    "experiment_timestamp": 1780494950.31857,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S4",
+    "experiment_timestamp": 1780494982.960695,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "nominal_diameter": 8,
+    "length": 30,
+    "thread_pitch": 1.25,
+    "head_diameter": 13,
+    "head_height": 8,
+    "head_chamfer_angle": 45,
+    "socket_size": 6
+  },
+  "material": {
+    "name": "Steel",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 450,
+    "tensile_strength": 600
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        1,
+        2,
+        3
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "magnitude": 1000
+    }
+  ],
+  "mesh": {
+    "element_type": "tet4",
+    "min_jacobian": 0.2,
+    "max_aspect_ratio": 10
+  },
+  "metadata": {
+    "test_id": "S17",
+    "experiment_timestamp": 1780471160.26769,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S17",
+    "experiment_timestamp": 1780471165.0938573,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

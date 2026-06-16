@@ -1,0 +1,63 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0,
+    "thickness": 6.0,
+    "fillet_radius": 5.0,
+    "hole_diameter": 6.5,
+    "hole_count": 2,
+    "edge_round_radius": 1.0
+  },
+  "material": {
+    "name": "Steel (SS400)",
+    "youngs_modulus": 200.0,
+    "poisson_ratio": 0.29,
+    "density": 7850.0,
+    "yield_strength": 245.0,
+    "tensile_strength": 400.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "magnitude": 1000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.6,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "S3",
+    "experiment_timestamp": 1780470934.7496417,
+    "has_injected_defect": true,
+    "attempt": 1,
+    "stage": "correction"
+  },
+  "_meta": {
+    "test_id": "S3",
+    "experiment_timestamp": 1780470942.1334934,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

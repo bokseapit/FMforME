@@ -1,0 +1,63 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "head_diameter": 13.0,
+    "head_height": 7.75,
+    "nominal_diameter": 8.0,
+    "length": 30.0,
+    "thread_pitch": 1.25,
+    "head_chamfer_angle": 30.0,
+    "socket_size": 6.0
+  },
+  "material": {
+    "name": "AISI 316 Stainless Steel",
+    "youngs_modulus": 193,
+    "poisson_ratio": 0.3,
+    "density": 8000,
+    "yield_strength": 290,
+    "tensile_strength": 580
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "magnitude": 10000
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.6,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "N3",
+    "experiment_timestamp": 1780471221.8878748,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N3",
+    "experiment_timestamp": 1780471225.9231806,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

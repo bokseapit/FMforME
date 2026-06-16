@@ -1,0 +1,49 @@
+{
+  "part_type": "ball_bearing",
+  "dimensions": {
+    "bore_diameter": 20.0,
+    "outer_diameter": 47.0,
+    "width": 14.0,
+    "ball_diameter": 7.938,
+    "ball_count": 8,
+    "raceway_groove_radius": 4.1,
+    "cage_type": "steel",
+    "shield_type": "open"
+  },
+  "material": {
+    "name": "AISI 52100",
+    "youngs_modulus": 210.0,
+    "poisson_ratio": 0.3,
+    "density": 7800.0,
+    "yield_strength": 1700.0,
+    "tensile_strength": 2000.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "tz"
+      ],
+      "type": "pinned"
+    }
+  ],
+  "loads": [],
+  "mesh": {
+    "element_type": "C3D10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "S18",
+    "experiment_timestamp": 1780495677.701213,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S18",
+    "experiment_timestamp": 1780495710.4226747,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

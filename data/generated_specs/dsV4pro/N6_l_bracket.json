@@ -1,0 +1,95 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 5,
+    "hole_diameter": 6,
+    "hole_count": 4,
+    "edge_round_radius": 2
+  },
+  "material": {
+    "name": "JIS SS400 Steel",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 245,
+    "tensile_strength": 400
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "fixed"
+    },
+    {
+      "node_id": 2,
+      "dof": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "fixed"
+    },
+    {
+      "node_id": 3,
+      "dof": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "fixed"
+    },
+    {
+      "node_id": 4,
+      "dof": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 5,
+      "direction": "y",
+      "magnitude": 500
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 3.0
+  },
+  "metadata": {
+    "test_id": "N6",
+    "experiment_timestamp": 1780495952.3031743,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N6",
+    "experiment_timestamp": 1780495980.4373322,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

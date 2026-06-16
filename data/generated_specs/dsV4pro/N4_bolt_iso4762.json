@@ -1,0 +1,64 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "head_diameter": 13.3,
+    "head_height": 8.0,
+    "nominal_diameter": 8.0,
+    "length": 30.0,
+    "thread_pitch": 1.25,
+    "head_chamfer_angle": 20.0,
+    "socket_size": 6.0,
+    "thread_length": 22.0,
+    "tip_chamfer_angle": 45.0,
+    "tip_chamfer_length": 1.0,
+    "knurl_pattern": "diamond",
+    "knurl_depth": 0.3
+  },
+  "material": {
+    "name": "Stainless Steel A2-70",
+    "youngs_modulus": 193.0,
+    "poisson_ratio": 0.29,
+    "density": 8000.0,
+    "yield_strength": 450.0,
+    "tensile_strength": 700.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "UX",
+        "UY",
+        "UZ",
+        "RX",
+        "RY",
+        "RZ"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": "Z",
+      "magnitude": 10000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "TET10",
+    "min_jacobian": 0.75,
+    "max_aspect_ratio": 3.2
+  },
+  "metadata": {
+    "test_id": "N4",
+    "experiment_timestamp": 1780495850.4933133,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N4",
+    "experiment_timestamp": 1780495881.7116513,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

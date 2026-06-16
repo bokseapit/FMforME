@@ -1,0 +1,16 @@
+# FMforME — Python Dependencies
+# Core dependencies for experiment execution
+
+# OpenAI-compatible API client (for all backends including DeepSeek and Qwen)
+openai>=1.0.0
+
+# Statistical computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# YAML config parsing
+pyyaml>=6.0
+
+# Fusion 360 add-in dependencies (ONLY needed for Layer 3)
+# These are provided by the Fusion 360 Python environment:
+#   adsk.core, adsk.fusion, adsk.cam, traceback

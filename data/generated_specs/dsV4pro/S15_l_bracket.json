@@ -1,0 +1,59 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 5,
+    "hole_diameter": 6,
+    "hole_count": 2,
+    "edge_round_radius": 2
+  },
+  "material": {
+    "name": "ASTM A36",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 250,
+    "tensile_strength": 400
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 2,
+      "direction": "y",
+      "magnitude": -1000
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 3.0
+  },
+  "metadata": {
+    "test_id": "S15",
+    "experiment_timestamp": 1780495525.9905248,
+    "has_injected_defect": true,
+    "attempt": 1,
+    "stage": "correction"
+  },
+  "_meta": {
+    "test_id": "S15",
+    "experiment_timestamp": 1780495581.8129323,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

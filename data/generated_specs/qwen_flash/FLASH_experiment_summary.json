@@ -1,0 +1,36 @@
+{
+  "experiment_config": {
+    "llm_backend": "deepseek",
+    "natural_runs_per_part": 5,
+    "total_tests": 33,
+    "n_seeded": 18,
+    "n_natural": 15,
+    "self_examine_enabled": true
+  },
+  "self_examine": {
+    "n_tests": 33,
+    "direct_passes": 18,
+    "corrected_passes": 15,
+    "failed_after_retries": 0,
+    "total_llm_attempts": 48,
+    "avg_attempts_per_test": 1.5
+  },
+  "seeded_tests": {
+    "n_total": 18,
+    "n_with_expected_defect": 18,
+    "n_detected": 17,
+    "detection_rate": "94.4%"
+  },
+  "natural_tests": {
+    "n_total": 15,
+    "n_passed": 15,
+    "n_with_defects": 5,
+    "defect_rate": "33.3%",
+    "pass_rate": "100.0%"
+  },
+  "timing": {
+    "total_experiment_time_s": 446.17,
+    "avg_llm_time_ms": 3573.7,
+    "avg_monitor_time_ms": 0.085
+  }
+}

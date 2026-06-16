@@ -1,0 +1,60 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 0.0,
+    "hole_diameter": 8,
+    "hole_count": 2,
+    "edge_round_radius": 0
+  },
+  "material": {
+    "name": "6061 Aluminum",
+    "youngs_modulus": 68.9,
+    "poisson_ratio": 0.33,
+    "density": 2700,
+    "yield_strength": 276,
+    "tensile_strength": 310
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        1,
+        2,
+        3
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "magnitude": 1000
+    }
+  ],
+  "mesh": {
+    "element_type": "tet4",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5
+  },
+  "metadata": {
+    "test_id": "S11",
+    "experiment_timestamp": 1780471074.6171813,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S11",
+    "experiment_timestamp": 1780471079.743683,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

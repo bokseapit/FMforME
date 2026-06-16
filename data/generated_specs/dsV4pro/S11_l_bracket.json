@@ -1,0 +1,65 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 0.0,
+    "hole_diameter": 5,
+    "hole_count": 4,
+    "edge_round_radius": 0
+  },
+  "material": {
+    "name": "S235",
+    "youngs_modulus": 210,
+    "poisson_ratio": 0.3,
+    "density": 7850,
+    "yield_strength": 235,
+    "tensile_strength": 360
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "UX",
+        "UY",
+        "UZ"
+      ],
+      "type": "fixed"
+    },
+    {
+      "node_id": 2,
+      "dof": [
+        "UX",
+        "UY",
+        "UZ"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 3,
+      "direction": "FY",
+      "magnitude": -100
+    }
+  ],
+  "mesh": {
+    "element_type": "tetrahedral",
+    "min_jacobian": 0.5,
+    "max_aspect_ratio": 5
+  },
+  "metadata": {
+    "test_id": "S11",
+    "experiment_timestamp": 1780495323.3865795,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S11",
+    "experiment_timestamp": 1780495345.397088,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

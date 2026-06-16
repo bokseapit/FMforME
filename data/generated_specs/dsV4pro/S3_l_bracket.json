@@ -1,0 +1,59 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50.0,
+    "height": 50.0,
+    "thickness": 6.0,
+    "fillet_radius": 5.0,
+    "hole_diameter": 5.5,
+    "hole_count": 4,
+    "edge_round_radius": 0.5
+  },
+  "material": {
+    "name": "Steel S235JR",
+    "youngs_modulus": 210.0,
+    "poisson_ratio": 0.3,
+    "density": 7850.0,
+    "yield_strength": 235.0,
+    "tensile_strength": 360.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": "fixed_face",
+      "dof": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "type": "displacement"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 1,
+      "direction": "-ty",
+      "magnitude": 500.0
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "S3",
+    "experiment_timestamp": 1780494915.8760662,
+    "has_injected_defect": true,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "S3",
+    "experiment_timestamp": 1780494940.7956605,
+    "has_injected_defect": true,
+    "self_examine": true
+  }
+}

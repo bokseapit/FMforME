@@ -1,0 +1,60 @@
+{
+  "part_type": "l_bracket",
+  "dimensions": {
+    "width": 50,
+    "height": 50,
+    "thickness": 6,
+    "fillet_radius": 5,
+    "hole_diameter": 6,
+    "hole_count": 4,
+    "edge_round_radius": 2
+  },
+  "material": {
+    "name": "AISI 1018 Steel",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.29,
+    "density": 7850,
+    "yield_strength": 370,
+    "tensile_strength": 440
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "dof": [
+        "ux",
+        "uy",
+        "uz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 100,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "magnitude": 100
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5
+  },
+  "metadata": {
+    "test_id": "N9",
+    "experiment_timestamp": 1780471305.323484,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N9",
+    "experiment_timestamp": 1780471310.0963652,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

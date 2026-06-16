@@ -1,0 +1,64 @@
+{
+  "part_type": "bolt_iso4762",
+  "dimensions": {
+    "nominal_diameter": 8.0,
+    "length": 30.0,
+    "thread_pitch": 1.25,
+    "head_diameter": 13.0,
+    "head_height": 8.0,
+    "socket_size": 6.0,
+    "head_chamfer_angle": 30.0,
+    "thread_runout_length": 6.0,
+    "knurl_diameter": 13.5,
+    "knurl_depth": 0.3,
+    "chamfer_tip_angle": 60.0,
+    "chamfer_tip_length": 0.5
+  },
+  "material": {
+    "name": "AISI 304 Stainless Steel",
+    "youngs_modulus": 193.0,
+    "poisson_ratio": 0.29,
+    "density": 8000.0,
+    "yield_strength": 215.0,
+    "tensile_strength": 505.0
+  },
+  "boundary_conditions": [
+    {
+      "node_id": "head_face_center",
+      "dof": [
+        "ux",
+        "uy",
+        "uz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": "thread_loaded_end",
+      "direction": "z",
+      "magnitude": 10000.0
+    }
+  ],
+  "mesh": {
+    "element_type": "tet10",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 5.0
+  },
+  "metadata": {
+    "test_id": "N4",
+    "experiment_timestamp": 1780471236.4456294,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N4",
+    "experiment_timestamp": 1780471240.6543117,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

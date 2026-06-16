@@ -1,0 +1,150 @@
+{
+  "model": "DeepSeek-V4-Flash",
+  "experiment_date": "2026-06",
+  "total_tests": 33,
+  "seeded_tests": {
+    "n_total": 18,
+    "n_evaluable": 18,
+    "n_llm_parse_failures": 0,
+    "n_detected": 17,
+    "detection_rate": "17/18 (94.4%)",
+    "by_defect_type": {
+      "D1": {
+        "total": 3,
+        "detected": 3,
+        "nil_parse_fail": 0,
+        "evaluable": 3,
+        "rate": "3/3 (100.0%)"
+      },
+      "D2": {
+        "total": 3,
+        "detected": 3,
+        "nil_parse_fail": 0,
+        "evaluable": 3,
+        "rate": "3/3 (100.0%)"
+      },
+      "D3": {
+        "total": 4,
+        "detected": 3,
+        "nil_parse_fail": 0,
+        "evaluable": 4,
+        "rate": "3/4 (75.0%)"
+      },
+      "D4": {
+        "total": 1,
+        "detected": 1,
+        "nil_parse_fail": 0,
+        "evaluable": 1,
+        "rate": "1/1 (100.0%)"
+      },
+      "D5": {
+        "total": 5,
+        "detected": 5,
+        "nil_parse_fail": 0,
+        "evaluable": 5,
+        "rate": "5/5 (100.0%)"
+      },
+      "D6": {
+        "total": 2,
+        "detected": 2,
+        "nil_parse_fail": 0,
+        "evaluable": 2,
+        "rate": "2/2 (100.0%)"
+      }
+    }
+  },
+  "self_examine": {
+    "n_tests_with_se": 33,
+    "direct_pass": 18,
+    "corrected_pass": 15,
+    "failed_after_retries": 0,
+    "total_llm_attempts": 48,
+    "avg_attempts_per_test": 1.5,
+    "attempt_distribution": {
+      "1": 18,
+      "2": 15
+    }
+  },
+  "natural_tests": {
+    "n_total": 15,
+    "n_passed_monitor": 15,
+    "n_failed_monitor": 0,
+    "n_with_defects": 5,
+    "pass_rate": "15/15 (100%)",
+    "defect_rate": "5/15 (33.3%)",
+    "by_part": {
+      "ball_bearing": {
+        "total": 5,
+        "passed": "5/5",
+        "defect_rate": "2/5 (40%)"
+      },
+      "bolt_iso4762": {
+        "total": 5,
+        "passed": "5/5",
+        "defect_rate": "2/5 (40%)"
+      },
+      "l_bracket": {
+        "total": 5,
+        "passed": "5/5",
+        "defect_rate": "1/5 (20%)"
+      }
+    }
+  },
+  "fusion360": {
+    "build_success": 33,
+    "total": 33,
+    "build_rate": "33/33 (100.0%)"
+  },
+  "defect_distribution_attempt0": {
+    "D6": {
+      "frequency": 14,
+      "proportion": "35.0%"
+    },
+    "D1": {
+      "frequency": 9,
+      "proportion": "22.5%"
+    },
+    "D2": {
+      "frequency": 7,
+      "proportion": "17.5%"
+    },
+    "D5": {
+      "frequency": 5,
+      "proportion": "12.5%"
+    },
+    "D3": {
+      "frequency": 3,
+      "proportion": "7.5%"
+    },
+    "D4": {
+      "frequency": 2,
+      "proportion": "5.0%"
+    }
+  },
+  "timing": {
+    "total_pipeline_time_s": 446.0,
+    "avg_llm_time_ms": 3573.7,
+    "avg_monitor_time_ms": 0.085
+  },
+  "per_part": {
+    "ball_bearing": {
+      "total_tests": 11,
+      "fusion_success": 11,
+      "llm_failures": 0,
+      "seeded_detection": "5/6"
+    },
+    "bolt_iso4762": {
+      "total_tests": 12,
+      "fusion_success": 12,
+      "llm_failures": 0,
+      "seeded_detection": "7/7"
+    },
+    "l_bracket": {
+      "total_tests": 10,
+      "fusion_success": 10,
+      "llm_failures": 0,
+      "seeded_detection": "5/5"
+    }
+  },
+  "llm_parse_failures": []
+}

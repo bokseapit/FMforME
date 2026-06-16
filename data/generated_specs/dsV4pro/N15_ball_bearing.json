@@ -1,0 +1,57 @@
+{
+  "part_type": "ball_bearing",
+  "dimensions": {
+    "bore_diameter": 20.0,
+    "outer_diameter": 47.0,
+    "width": 14.0,
+    "ball_diameter": 7.938,
+    "ball_count": 8,
+    "raceway_groove_radius": 4.1,
+    "cage_type": "stamped_steel",
+    "shield_type": "double_shielded"
+  },
+  "material": {
+    "name": "chrome_steel",
+    "youngs_modulus": 200,
+    "poisson_ratio": 0.3,
+    "density": 7800,
+    "yield_strength": 1700,
+    "tensile_strength": 2000
+  },
+  "boundary_conditions": [
+    {
+      "node_id": 100,
+      "dof": [
+        "UX",
+        "UY",
+        "UZ"
+      ],
+      "type": "fixed"
+    }
+  ],
+  "loads": [
+    {
+      "node_id": 200,
+      "direction": "Y",
+      "magnitude": 1000
+    }
+  ],
+  "mesh": {
+    "element_type": "hex8",
+    "min_jacobian": 0.7,
+    "max_aspect_ratio": 3.0
+  },
+  "metadata": {
+    "test_id": "N15",
+    "experiment_timestamp": 1780496329.5390637,
+    "has_injected_defect": false,
+    "attempt": 0,
+    "stage": "initial"
+  },
+  "_meta": {
+    "test_id": "N15",
+    "experiment_timestamp": 1780496365.5169055,
+    "has_injected_defect": false,
+    "self_examine": true
+  }
+}

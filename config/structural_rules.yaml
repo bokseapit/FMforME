@@ -1,0 +1,120 @@
+# ============================================================================
+# Structural Safety Rules DSL (Domain-Specific Language)
+# ============================================================================
+# Format follows AgentSpec (ICSE 2026) rule structure:
+#   (trigger, check, enforce) → (WHEN, predicate, RAISE severity)
+#
+# Six defect categories D1–D6, grounded in engineering standards.
+# Used by DSLMonitor (layer2_monitor.py) for YAML-driven validation.
+# ============================================================================
+
+rules:
+  # ── D5: Material Property Violations ──────────────────────────────────────
+  # Standard: ISO 286 / ASTM Material Standards
+  # Most commonly triggered by LLM hallucinations (Poisson ratio > 0.5, etc.)
+
+  - id: D5_poisson_ratio
+    on: material
+    when: "poisson_ratio NOT IN_RANGE (0.0, 0.5)"
+    raise: ERROR
+    message: "Poisson ratio {value} violates thermodynamics, must be in (0, 0.5)"
+    standard: "ISO/IEC material physics constraint"
+
+  - id: D5_youngs_modulus
+    on: material
+    when: "youngs_modulus <= 0"
+    raise: ERROR
+    message: "Young modulus {value} <= 0 GPa, physically impossible"
+    standard: "ISO 4762 / ASTM E111"
+
+  - id: D5_density
+    on: material
+    when: "density <= 0"
+    raise: ERROR
+    message: "Density {value} <= 0 kg/m^3, physically impossible"
+
+  - id: D5_yield_vs_tensile
+    on: material
+    when: "yield_strength >= tensile_strength"
+    raise: ERROR
+    message: "Yield strength >= tensile strength violates material physics"
+
+  # ── D4: Load-Boundary Condition Conflict ─────────────────────────────────
+  # Standard: ASME V&V-10 §5.1
+
+  - id: D4_load_bc_conflict
+    on: [loads, boundary_conditions]
+    when: "INTERSECTS(loads.node_ids, bc.node_ids)"
+    raise: WARN
+    message: "Nodes {value} appear in both load and boundary condition sets"
+    standard: "ASME V&V-10 Sec 5.1"
+
+  # ── D1: Unconstrained Degrees of Freedom ─────────────────────────────────
+  # Standard: ASME V&V-10-2019 §4
+
+  - id: D1_no_boundary_condition
+    on: boundary_conditions
+    when: "COUNT == 0"
+    raise: ERROR
+    message: "No boundary conditions defined — free rigid body (singular K)"
+    standard: "ASME V&V-10-2019 §4"
+
+  - id: D1_no_fixed_constraint
+    on: boundary_conditions
+    when: "NO_FIXED_TYPE"
+    raise: WARN
+    message: "No 'fixed' type BC — rigid body modes may exist"
+
+  # ── D2: Negative Stiffness ───────────────────────────────────────────────
+  # Standard: Bathe FEM Textbook §2.3
+
+  - id: D2_negative_dimension
+    on: dimensions
+    when: "ANY_DIMENSION <= 0"
+    raise: ERROR
+    message: "Dimension <= 0 → negative/zero stiffness contribution (Bathe §2.3)"
+    standard: "Bathe FEM Textbook §2.3"
+
+  - id: D2_excessive_segment_ratio
+    on: dimensions
+    when: "SEGMENT_RATIO > 10"
+    raise: WARN
+    message: "Adjacent segment diameter ratio > 10:1, stress concentration risk"
+
+  # ── D3: Stress Singularity ───────────────────────────────────────────────
+  # Standard: Knupp 2001, SIAM J. Sci. Comput.
+
+  - id: D3_zero_fillet
+    on: dimensions
+    when: "fillet_radius <= 0"
+    raise: WARN
+    message: "Zero fillet radius → stress singularity at re-entrant corner (Knupp 2001)"
+    standard: "Knupp 2001, SIAM J. Sci. Comput."
+
+  - id: D3_high_aspect_ratio
+    on: mesh
+    when: "max_aspect_ratio > 50"
+    raise: WARN
+    message: "Mesh aspect ratio > 50, element quality severely degraded"
+
+  # ── D6: Mesh Topology Errors ─────────────────────────────────────────────
+  # Standard: Verdict Library (Stimpson 2007)
+
+  - id: D6_negative_jacobian
+    on: mesh
+    when: "min_jacobian < 0"
+    raise: ERROR
+    message: "min_jacobian < 0 → inverted elements, FEA solver will fail (Stimpson 2007)"
+    standard: "Verdict Library (Stimpson 2007)"
+
+  - id: D6_poor_jacobian
+    on: mesh
+    when: "min_jacobian IN_RANGE [0, 0.5)"
+    raise: WARN
+    message: "min_jacobian < 0.5, mesh quality marginal (DIANA solver threshold)"
+
+  - id: D6_zero_jacobian
+    on: mesh
+    when: "min_jacobian == 0"
+    raise: ERROR
+    message: "min_jacobian = 0 → degenerate element(s), zero volume"

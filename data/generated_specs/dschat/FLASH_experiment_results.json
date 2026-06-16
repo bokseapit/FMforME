@@ -1,0 +1,4644 @@
+[
+  {
+    "test_id": "S1",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket bolt per ISO 4762",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "material.poisson_ratio",
+      "value": 0.6
+    },
+    "expected_defect": "D5",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D5"
+        ],
+        "defect_details": [
+          {
+            "id": "D5",
+            "sev": "ERROR",
+            "desc": "poisson_ratio=0.6 out of range (0.0, 0.5)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'hex'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 6560.7,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "thread_pitch": 1.25,
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "head_chamfer_angle": 30.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Stainless Steel 316",
+        "youngs_modulus": 193.0,
+        "poisson_ratio": 0.3,
+        "density": 8000.0,
+        "yield_strength": 205.0,
+        "tensile_strength": 515.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S1",
+        "experiment_timestamp": 1780498223.9278262,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S1",
+        "experiment_timestamp": 1780498230.488464,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.086,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'hex'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": true,
+    "fusion_time_ms": 68594.6,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S1\\S1_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S1\\S1_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 75155.4
+  },
+  {
+    "test_id": "S2",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket bolt per ISO 4762",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "material.youngs_modulus",
+      "value": -200
+    },
+    "expected_defect": "D5",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 2,
+        "n_warnings": 1,
+        "passed": false,
+        "defect_types": [
+          "D5",
+          "D1",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D5",
+            "sev": "ERROR",
+            "desc": "youngs_modulus=-200 out of range (0.001, 1000)"
+          },
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4186.7,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "thread_pitch": 1.25,
+        "head_chamfer_angle": 30.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Stainless Steel A2-70",
+        "youngs_modulus": 200.0,
+        "poisson_ratio": 0.3,
+        "density": 7900.0,
+        "yield_strength": 450.0,
+        "tensile_strength": 700.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": "tx",
+          "magnitude": 500.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.6,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S2",
+        "experiment_timestamp": 1780498299.0872774,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S2",
+        "experiment_timestamp": 1780498303.2739768,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.066,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 10519.2,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S2\\S2_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S2\\S2_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 14706.0
+  },
+  {
+    "test_id": "S3",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm fillet radius per JIS B",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "loads",
+      "value": [
+        {
+          "node_id": 1,
+          "direction": "-ty",
+          "magnitude": 500.0
+        }
+      ]
+    },
+    "expected_defect": "D4",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 6,
+        "passed": true,
+        "defect_types": [
+          "D2",
+          "D4",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D4",
+            "sev": "WARN",
+            "desc": "Nodes [1] appear in both boundary_conditions and loads. Load applied at constrained nodes will be absorbed by the constraint."
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'hole_diameter' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'hole_count' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2262.0,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 0,
+        "hole_count": 0,
+        "edge_round_radius": 0
+      },
+      "material": {
+        "name": "Steel (JIS SS400)",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "ux",
+            "uy",
+            "uz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 1,
+          "direction": "-ty",
+          "magnitude": 500.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tetrahedral",
+        "min_jacobian": 0.3,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "S3",
+        "experiment_timestamp": 1780498313.79733,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S3",
+        "experiment_timestamp": 1780498316.059286,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.114,
+    "violations": [
+      {
+        "id": "D4",
+        "sev": "WARN",
+        "desc": "Nodes [1] appear in both boundary_conditions and loads. Load applied at constrained nodes will be absorbed by the constraint.",
+        "field_path": "loads/boundary_conditions",
+        "standard": "ASME V&V-10 §5.1"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'hole_diameter' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.hole_diameter",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'hole_count' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.hole_count",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.edge_round_radius",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)",
+        "field_path": "mesh.min_jacobian",
+        "standard": "Verdict Library (Stimpson 2007)"
+      },
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 6,
+    "n_errors": 0,
+    "n_warnings": 6,
+    "defect_detected": true,
+    "fusion_time_ms": 7016.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S3\\S3_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S3\\S3_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 9278.6
+  },
+  {
+    "test_id": "S4",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm fillet radius",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "boundary_conditions",
+      "value": [
+        {
+          "node_id": 1,
+          "dof": [
+            "ty",
+            "tz"
+          ],
+          "type": "sliding"
+        }
+      ]
+    },
+    "expected_defect": "D1",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 5,
+        "passed": true,
+        "defect_types": [
+          "D1",
+          "D2",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "WARN",
+            "desc": "Missing DOF constraints: ['rx', 'ry', 'rz', 'tx']. Unconstrained DOF cause rigid body modes."
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'hole_diameter' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'hole_count' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2073.7,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 0,
+        "hole_count": 0,
+        "edge_round_radius": 0
+      },
+      "material": {
+        "name": "Steel",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "ty",
+            "tz"
+          ],
+          "type": "sliding"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 100
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.3,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "S4",
+        "experiment_timestamp": 1780498323.080309,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S4",
+        "experiment_timestamp": 1780498325.1540043,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.176,
+    "violations": [
+      {
+        "id": "D1",
+        "sev": "WARN",
+        "desc": "Missing DOF constraints: ['rx', 'ry', 'rz', 'tx']. Unconstrained DOF cause rigid body modes.",
+        "field_path": "boundary_conditions",
+        "standard": "ASME V&V-10-2019 §4"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'hole_diameter' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.hole_diameter",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'hole_count' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.hole_count",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.edge_round_radius",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)",
+        "field_path": "mesh.min_jacobian",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 5,
+    "n_errors": 0,
+    "n_warnings": 5,
+    "defect_detected": true,
+    "fusion_time_ms": 9019.3,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S4\\S4_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S4\\S4_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11093.2
+  },
+  {
+    "test_id": "S5",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, bore 20mm, OD 47mm, width 14mm, 8 balls, chrome steel",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.ball_diameter",
+      "value": 6.0
+    },
+    "expected_defect": "D3",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2538.5,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20.0,
+        "outer_diameter": 47.0,
+        "width": 14.0,
+        "ball_diameter": 6.0,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.0,
+        "cage_type": "stamped_steel",
+        "shield_type": "open"
+      },
+      "material": {
+        "name": "chrome_steel",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7800.0,
+        "yield_strength": 1200.0,
+        "tensile_strength": 1600.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 0,
+          "dof": [
+            0,
+            1,
+            2
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 1,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S5",
+        "experiment_timestamp": 1780498334.177903,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S5",
+        "experiment_timestamp": 1780498336.716382,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.081,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": false,
+    "fusion_time_ms": 8016.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S5\\S5_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S5\\S5_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10555.1
+  },
+  {
+    "test_id": "S6",
+    "part": "ball_bearing",
+    "description": "Deep groove ball bearing, bore 25mm, OD 52mm, width 15mm, 9 balls",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.bore_diameter",
+      "value": -25.0
+    },
+    "expected_defect": "D2",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D2"
+        ],
+        "defect_details": [
+          {
+            "id": "D2",
+            "sev": "ERROR",
+            "desc": "Dimension 'bore_diameter' = -25.0 < 0 (negative stiffness contribution)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4865.0,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 25.0,
+        "outer_diameter": 52.0,
+        "width": 15.0,
+        "ball_diameter": 7.938,
+        "ball_count": 9,
+        "raceway_groove_radius": 4.0
+      },
+      "material": {
+        "name": "AISI 52100 Steel",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7800.0,
+        "yield_strength": 2000.0,
+        "tensile_strength": 2300.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S6",
+        "experiment_timestamp": 1780498344.7373016,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S6",
+        "experiment_timestamp": 1780498349.6022627,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.072,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 6516.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S6\\S6_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S6\\S6_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11381.9
+  },
+  {
+    "test_id": "S7",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel bolt per ISO 4762",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "boundary_conditions",
+      "value": []
+    },
+    "expected_defect": "D1",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 1,
+        "passed": false,
+        "defect_types": [
+          "D1",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'C3D8R'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4544.6,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "thread_pitch": 1.25,
+        "head_chamfer_angle": 30.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Stainless Steel A2-70",
+        "youngs_modulus": 193.0,
+        "poisson_ratio": 0.29,
+        "density": 8000.0,
+        "yield_strength": 450.0,
+        "tensile_strength": 700.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S7",
+        "experiment_timestamp": 1780498356.1222868,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S7",
+        "experiment_timestamp": 1780498360.6668477,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.074,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 9017.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S7\\S7_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S7\\S7_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 13562.5
+  },
+  {
+    "test_id": "S8",
+    "part": "bolt_iso4762",
+    "description": "M8x30 bolt",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.nominal_diameter",
+      "value": 0.0
+    },
+    "expected_defect": "D2",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D2"
+        ],
+        "defect_details": [
+          {
+            "id": "D2",
+            "sev": "ERROR",
+            "desc": "Dimension 'nominal_diameter' = 0 (zero cross-section, singular stiffness)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4604.5,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8,
+        "length": 30,
+        "thread_pitch": 1.25,
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "head_chamfer_angle": 30,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Steel_Alloy",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 640,
+        "tensile_strength": 800
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 100,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 200,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000
+        }
+      ],
+      "mesh": {
+        "element_type": "TET10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S8",
+        "experiment_timestamp": 1780498369.6897829,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S8",
+        "experiment_timestamp": 1780498374.2943292,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.068,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 8513.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S8\\S8_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S8\\S8_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 13118.1
+  },
+  {
+    "test_id": "S9",
+    "part": "bolt_iso4762",
+    "description": "M8x30 bolt",
+    "has_injected_defect": true,
+    "injected_defect": [
+      {
+        "path": "material.yield_strength",
+        "value": 600
+      },
+      {
+        "path": "material.tensile_strength",
+        "value": 500
+      }
+    ],
+    "expected_defect": "D5",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 1,
+        "passed": false,
+        "defect_types": [
+          "D5",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D5",
+            "sev": "ERROR",
+            "desc": "yield_strength(600) >= tensile_strength(500); violates material physics"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4655.8,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8.0,
+        "pitch": 1.25,
+        "length": 30.0,
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "socket_size": 4.0,
+        "head_chamfer_angle": 30.0
+      },
+      "material": {
+        "name": "AISI 4140 Steel",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7850.0,
+        "yield_strength": 600.0,
+        "tensile_strength": 720.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S9",
+        "experiment_timestamp": 1780498382.811816,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S9",
+        "experiment_timestamp": 1780498387.4676142,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.067,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 8515.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S9\\S9_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S9\\S9_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 13171.4
+  },
+  {
+    "test_id": "S10",
+    "part": "bolt_iso4762",
+    "description": "M8x30 bolt",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "mesh.min_jacobian",
+      "value": -0.5
+    },
+    "expected_defect": "D6",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 1,
+        "passed": false,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "ERROR",
+            "desc": "min_jacobian = -0.5 < 0 → inverted elements. Mesh has negative-volume elements (flipped/inside-out). FEA solver will fail."
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 5656.7,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "head_diameter": 14.0,
+        "head_height": 6.0,
+        "thread_pitch": 1.25,
+        "head_chamfer_angle": 30.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Steel_AISI_4140",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7850.0,
+        "yield_strength": 950.0,
+        "tensile_strength": 1100.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1000,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2000,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 1000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S10",
+        "experiment_timestamp": 1780498395.988837,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S10",
+        "experiment_timestamp": 1780498401.6455903,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.101,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 8014.7,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S10\\S10_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S10\\S10_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 13671.5
+  },
+  {
+    "test_id": "S11",
+    "part": "l_bracket",
+    "description": "50x50x6mm L-bracket, no fillet",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.fillet_radius",
+      "value": 0.0
+    },
+    "expected_defect": "D3",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 4,
+        "passed": true,
+        "defect_types": [
+          "D3",
+          "D2",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'fillet_radius' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D3",
+            "sev": "WARN",
+            "desc": "fillet_radius = 0 (sharp corner → stress singularity, FEA stress at re-entrant corner unbounded)"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedron'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2421.5,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 0.0,
+        "hole_diameter": 10,
+        "hole_count": 2,
+        "edge_round_radius": 0
+      },
+      "material": {
+        "name": "Steel",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7800,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tetrahedron",
+        "min_jacobian": 0.5,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S11",
+        "experiment_timestamp": 1780498409.6643207,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S11",
+        "experiment_timestamp": 1780498412.0857882,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.111,
+    "violations": [
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'fillet_radius' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.fillet_radius",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D2",
+        "sev": "WARN",
+        "desc": "Dimension 'edge_round_radius' = 0 (zero cross-section, singular stiffness)",
+        "field_path": "dimensions.edge_round_radius",
+        "standard": "Bathe FEM Textbook §2.3"
+      },
+      {
+        "id": "D3",
+        "sev": "WARN",
+        "desc": "fillet_radius = 0 (sharp corner → stress singularity, FEA stress at re-entrant corner unbounded)",
+        "field_path": "dimensions.fillet_radius",
+        "standard": "Knupp 2001, SIAM J.Sci.Comput."
+      },
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'tetrahedron'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 4,
+    "n_errors": 0,
+    "n_warnings": 4,
+    "defect_detected": true,
+    "fusion_time_ms": 9517.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S11\\S11_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S11\\S11_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11939.1
+  },
+  {
+    "test_id": "S12",
+    "part": "l_bracket",
+    "description": "50x50x6mm L-bracket",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.thickness",
+      "value": -3.0
+    },
+    "expected_defect": "D2",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D2"
+        ],
+        "defect_details": [
+          {
+            "id": "D2",
+            "sev": "ERROR",
+            "desc": "Dimension 'thickness' = -3.0 < 0 (negative stiffness contribution)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4721.1,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50.0,
+        "height": 50.0,
+        "thickness": 6.0,
+        "fillet_radius": 3.0,
+        "hole_diameter": 8.0,
+        "hole_count": 2,
+        "edge_round_radius": 2.0
+      },
+      "material": {
+        "name": "Aluminum 6061-T6",
+        "youngs_modulus": 68.9,
+        "poisson_ratio": 0.33,
+        "density": 2700,
+        "yield_strength": 276,
+        "tensile_strength": 310
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 10,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 100
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S12",
+        "experiment_timestamp": 1780498421.608274,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S12",
+        "experiment_timestamp": 1780498426.329407,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.065,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 7018.1,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S12\\S12_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S12\\S12_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11739.3
+  },
+  {
+    "test_id": "S13",
+    "part": "ball_bearing",
+    "description": "6205 deep groove ball bearing, 52mm OD, 15mm width",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "dimensions.ball_count",
+      "value": 0
+    },
+    "expected_defect": "D3",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 3,
+        "passed": false,
+        "defect_types": [
+          "D3",
+          "D2",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D2",
+            "sev": "WARN",
+            "desc": "Dimension 'ball_count' = 0 (zero cross-section, singular stiffness)"
+          },
+          {
+            "id": "D3",
+            "sev": "ERROR",
+            "desc": "ball_count = 0 — zero rolling elements means no load transfer and point contact stress singularity at raceway"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)"
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'quadratic_tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 5229.6,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 25.0,
+        "outer_diameter": 52.0,
+        "width": 15.0,
+        "ball_diameter": 7.94,
+        "ball_count": 9,
+        "raceway_groove_radius": 4.12
+      },
+      "material": {
+        "name": "bearing_steel_GCr15",
+        "youngs_modulus": 207.0,
+        "poisson_ratio": 0.3,
+        "density": 7800.0,
+        "yield_strength": 600.0,
+        "tensile_strength": 860.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 100,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 200,
+          "direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "magnitude": 1000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex20",
+        "min_jacobian": 0.6,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S13",
+        "experiment_timestamp": 1780498433.3514953,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S13",
+        "experiment_timestamp": 1780498438.5810828,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.065,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 7017.9,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S13\\S13_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S13\\S13_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 12247.6
+  },
+  {
+    "test_id": "S14",
+    "part": "ball_bearing",
+    "description": "Deep groove ball bearing 6204, chrome steel, 20mm bore",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "material.density",
+      "value": 0.01
+    },
+    "expected_defect": "D5",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 2,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D5",
+          "D1"
+        ],
+        "defect_details": [
+          {
+            "id": "D5",
+            "sev": "ERROR",
+            "desc": "density=0.01 out of range (100, 25000)"
+          },
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4689.9,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20.0,
+        "outer_diameter": 47.0,
+        "width": 14.0,
+        "ball_diameter": 7.94,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.0,
+        "cage_type": "stamped_steel",
+        "shield_type": "open"
+      },
+      "material": {
+        "name": "chrome_steel_SAE52100",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.29,
+        "density": 7850.0,
+        "yield_strength": 1520.0,
+        "tensile_strength": 1820.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1000,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2000,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex20",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S14",
+        "experiment_timestamp": 1780498445.6028304,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S14",
+        "experiment_timestamp": 1780498450.292761,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.078,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": true,
+    "fusion_time_ms": 7513.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S14\\S14_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S14\\S14_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 12203.5
+  },
+  {
+    "test_id": "S15",
+    "part": "l_bracket",
+    "description": "L-bracket 50x50x6mm",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "material.poisson_ratio",
+      "value": 0.8
+    },
+    "expected_defect": "D5",
+    "expected_severity": "ERROR",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D5"
+        ],
+        "defect_details": [
+          {
+            "id": "D5",
+            "sev": "ERROR",
+            "desc": "poisson_ratio=0.8 out of range (0.0, 0.5)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 5191.7,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 3,
+        "hole_diameter": 6,
+        "hole_count": 2,
+        "edge_round_radius": 2
+      },
+      "material": {
+        "name": "Steel AISI 1018",
+        "youngs_modulus": 205,
+        "poisson_ratio": 0.29,
+        "density": 7870,
+        "yield_strength": 370,
+        "tensile_strength": 440
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tetrahedral",
+        "min_jacobian": 0.6,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "S15",
+        "experiment_timestamp": 1780498457.8107898,
+        "has_injected_defect": true,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "S15",
+        "experiment_timestamp": 1780498463.0025353,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.083,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": true,
+    "fusion_time_ms": 7014.6,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S15\\S15_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S15\\S15_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 12206.4
+  },
+  {
+    "test_id": "S16",
+    "part": "ball_bearing",
+    "description": "Deep groove ball bearing with coarse mesh, 25mm bore",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "mesh.max_aspect_ratio",
+      "value": 100.0
+    },
+    "expected_defect": "D3",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D3"
+        ],
+        "defect_details": [
+          {
+            "id": "D3",
+            "sev": "WARN",
+            "desc": "max_aspect_ratio = 100.0 (>50) may cause stress singularities in distorted elements"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2727.4,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 25.0,
+        "outer_diameter": 47.0,
+        "width": 12.0,
+        "ball_diameter": 7.5,
+        "ball_count": 7,
+        "raceway_groove_radius": 3.8,
+        "cage_type": "stamped_steel",
+        "shield_type": "open"
+      },
+      "material": {
+        "name": "bearing_steel_52100",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7800,
+        "yield_strength": 1700,
+        "tensile_strength": 2000
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 100.0
+      },
+      "metadata": {
+        "test_id": "S16",
+        "experiment_timestamp": 1780498470.0253298,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S16",
+        "experiment_timestamp": 1780498472.7527308,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.081,
+    "violations": [
+      {
+        "id": "D3",
+        "sev": "WARN",
+        "desc": "max_aspect_ratio = 100.0 (>50) may cause stress singularities in distorted elements",
+        "field_path": "mesh.max_aspect_ratio",
+        "standard": "Knupp 2001, SIAM J.Sci.Comput."
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": true,
+    "fusion_time_ms": 7013.1,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S16\\S16_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S16\\S16_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 9740.6
+  },
+  {
+    "test_id": "S17",
+    "part": "bolt_iso4762",
+    "description": "M8x30 bolt with coarse mesh",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "mesh.min_jacobian",
+      "value": 0.2
+    },
+    "expected_defect": "D6",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 2,
+        "passed": true,
+        "defect_types": [
+          "D4",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D4",
+            "sev": "WARN",
+            "desc": "Nodes [100] appear in both boundary_conditions and loads. Load applied at constrained nodes will be absorbed by the constraint."
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.2 < 0.3, mesh quality critically low"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2874.5,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "thread_pitch": 1.25,
+        "head_diameter": 13.0,
+        "head_height": 5.0,
+        "head_chamfer_angle": 45.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "Steel_10.9",
+        "youngs_modulus": 210,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 940,
+        "tensile_strength": 1040
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3
+          ],
+          "type": "fixed"
+        },
+        {
+          "node_id": 100,
+          "dof": [
+            1
+          ],
+          "type": "displacement"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet4",
+        "min_jacobian": 0.2,
+        "max_aspect_ratio": 10
+      },
+      "metadata": {
+        "test_id": "S17",
+        "experiment_timestamp": 1780498479.7731612,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S17",
+        "experiment_timestamp": 1780498482.6476505,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.096,
+    "violations": [
+      {
+        "id": "D4",
+        "sev": "WARN",
+        "desc": "Nodes [100] appear in both boundary_conditions and loads. Load applied at constrained nodes will be absorbed by the constraint.",
+        "field_path": "loads/boundary_conditions",
+        "standard": "ASME V&V-10 §5.1"
+      },
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "min_jacobian = 0.2 < 0.3, mesh quality critically low",
+        "field_path": "mesh.min_jacobian",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 2,
+    "n_errors": 0,
+    "n_warnings": 2,
+    "defect_detected": true,
+    "fusion_time_ms": 7013.5,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S17\\S17_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S17\\S17_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 9888.1
+  },
+  {
+    "test_id": "S18",
+    "part": "ball_bearing",
+    "description": "Ball bearing 6204, inner ring fixed at one point only",
+    "has_injected_defect": true,
+    "injected_defect": {
+      "path": "boundary_conditions",
+      "value": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tz"
+          ],
+          "type": "pinned"
+        }
+      ]
+    },
+    "expected_defect": "D1",
+    "expected_severity": "WARN",
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D1"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "WARN",
+            "desc": "Missing DOF constraints: ['rx', 'ry', 'rz', 'tx', 'ty']. Unconstrained DOF cause rigid body modes."
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2640.5,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20,
+        "outer_diameter": 47,
+        "width": 14,
+        "ball_diameter": 7.94,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.2,
+        "cage_type": "snap_in",
+        "shield_type": "metal_shield"
+      },
+      "material": {
+        "name": "bearing_steel_52100",
+        "youngs_modulus": 210,
+        "poisson_ratio": 0.3,
+        "density": 7800,
+        "yield_strength": 1800,
+        "tensile_strength": 2000
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "tz"
+          ],
+          "type": "pinned"
+        }
+      ],
+      "loads": [],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "S18",
+        "experiment_timestamp": 1780498489.665035,
+        "has_injected_defect": true,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "S18",
+        "experiment_timestamp": 1780498492.3055215,
+        "has_injected_defect": true,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": false,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.114,
+    "violations": [
+      {
+        "id": "D1",
+        "sev": "WARN",
+        "desc": "Missing DOF constraints: ['rx', 'ry', 'rz', 'tx', 'ty']. Unconstrained DOF cause rigid body modes.",
+        "field_path": "boundary_conditions",
+        "standard": "ASME V&V-10-2019 §4"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": true,
+    "fusion_time_ms": 9015.6,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S18\\S18_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\S18\\S18_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11656.2
+  },
+  {
+    "test_id": "N1",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket head bolt per ISO 4762, with partial thread, chamfered tip, and knurled head edge",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2508.4,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "head_diameter": 13.0,
+        "head_height": 6.0,
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "thread_pitch": 1.25,
+        "head_chamfer_angle": 30.0,
+        "socket_size": 6.0
+      },
+      "material": {
+        "name": "stainless_steel_304",
+        "youngs_modulus": 193.0,
+        "poisson_ratio": 0.29,
+        "density": 8000.0,
+        "yield_strength": 215.0,
+        "tensile_strength": 505.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "magnitude": 10000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet4",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N1",
+        "experiment_timestamp": 1780498501.3267136,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N1",
+        "experiment_timestamp": 1780498503.8350923,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.079,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 7514.4,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N1\\N1_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N1\\N1_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10022.9
+  },
+  {
+    "test_id": "N2",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket head bolt per ISO 4762, with partial thread, chamfered tip, and knurled head edge",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'C3D10'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2872.2,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8,
+        "length": 30,
+        "thread_pitch": 1.25,
+        "head_diameter": 13,
+        "head_height": 8,
+        "socket_size": 6,
+        "head_chamfer_angle": 30,
+        "knurl_diameter": 14,
+        "knurl_height": 2,
+        "partial_thread_length": 18,
+        "threaded_length": 22,
+        "chamfer_tip_length": 1.5,
+        "chamfer_tip_angle": 45
+      },
+      "material": {
+        "name": "Stainless Steel A2-70",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 450,
+        "tensile_strength": 700
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000
+        }
+      ],
+      "mesh": {
+        "element_type": "C3D10",
+        "min_jacobian": 0.5,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N2",
+        "experiment_timestamp": 1780498511.3533561,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N2",
+        "experiment_timestamp": 1780498514.2255197,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.086,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'C3D10'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": null,
+    "fusion_time_ms": 7513.4,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N2\\N2_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N2\\N2_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10385.7
+  },
+  {
+    "test_id": "N3",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket head bolt per ISO 4762, with partial thread, chamfered tip, and knurled head edge",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2468.6,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8,
+        "length": 30,
+        "thread_pitch": 1.25,
+        "head_diameter": 13,
+        "head_height": 8,
+        "head_chamfer_angle": 30,
+        "socket_size": 6,
+        "thread_length": 22,
+        "chamfer_tip_length": 1
+      },
+      "material": {
+        "name": "Stainless Steel 304",
+        "youngs_modulus": 193,
+        "poisson_ratio": 0.29,
+        "density": 8000,
+        "yield_strength": 205,
+        "tensile_strength": 515
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            0,
+            1
+          ],
+          "magnitude": 10000
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N3",
+        "experiment_timestamp": 1780498521.7419164,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N3",
+        "experiment_timestamp": 1780498524.2105565,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.067,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 7012.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N3\\N3_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N3\\N3_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 9481.5
+  },
+  {
+    "test_id": "N4",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket head bolt per ISO 4762, with partial thread, chamfered tip, and knurled head edge",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedron'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2772.9,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8,
+        "length": 30,
+        "head_diameter": 13,
+        "head_height": 8,
+        "thread_pitch": 1.25,
+        "head_chamfer_angle": 30,
+        "socket_size": 6
+      },
+      "material": {
+        "name": "AISI 304 Stainless Steel",
+        "youngs_modulus": 193,
+        "poisson_ratio": 0.29,
+        "density": 8000,
+        "yield_strength": 215,
+        "tensile_strength": 505
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "all"
+          ],
+          "type": "fixed"
+        },
+        {
+          "node_id": 100,
+          "dof": [
+            "ux",
+            "uy"
+          ],
+          "type": "roller"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 50,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 5000
+        }
+      ],
+      "mesh": {
+        "element_type": "tetrahedron",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N4",
+        "experiment_timestamp": 1780498531.2268524,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N4",
+        "experiment_timestamp": 1780498533.9997888,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.083,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'tetrahedron'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": null,
+    "fusion_time_ms": 8013.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N4\\N4_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N4\\N4_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10786.8
+  },
+  {
+    "test_id": "N5",
+    "part": "bolt_iso4762",
+    "description": "M8x30 stainless steel hex socket head bolt per ISO 4762, with partial thread, chamfered tip, and knurled head edge",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 1,
+        "passed": false,
+        "defect_types": [
+          "D1",
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          },
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "min_jacobian = 0.3 < 0.5 (DIANA solver threshold)"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 5113.6,
+    "spec": {
+      "part_type": "bolt_iso4762",
+      "dimensions": {
+        "nominal_diameter": 8.0,
+        "length": 30.0,
+        "head_diameter": 13.0,
+        "head_height": 8.0,
+        "thread_pitch": 1.25,
+        "socket_size": 6.0,
+        "head_chamfer_angle": 30.0,
+        "thread_length": 20.0,
+        "tip_chamfer_length": 1.5,
+        "knurl_pitch": 0.5,
+        "knurl_depth": 0.2
+      },
+      "material": {
+        "name": "Stainless Steel A2-70",
+        "youngs_modulus": 200.0,
+        "poisson_ratio": 0.3,
+        "density": 7800.0,
+        "yield_strength": 450.0,
+        "tensile_strength": 700.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": "head_underside_center",
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": "bolt_tip_node",
+          "direction": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "magnitude": 10000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.5,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N5",
+        "experiment_timestamp": 1780498542.0163474,
+        "has_injected_defect": false,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "N5",
+        "experiment_timestamp": 1780498547.129928,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "bolt_iso4762",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.073,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 6513.3,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N5\\N5_bolt_iso4762.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N5\\N5_bolt_iso4762.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11627.0
+  },
+  {
+    "test_id": "N6",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm inside fillet radius, two 6mm mounting holes per leg with countersinks, and 2mm edge rounds per JIS B standard",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D1"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4403.1,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 6.6,
+        "countersink_diameter": 12,
+        "countersink_angle": 90,
+        "hole_count": 4,
+        "edge_round_radius": 2,
+        "hole_hole_leg1_center": 15,
+        "hole_hole_leg2_center": 15
+      },
+      "material": {
+        "name": "Steel (JIS B standard)",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1001,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 1002,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 500
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N6",
+        "experiment_timestamp": 1780498553.646545,
+        "has_injected_defect": false,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "N6",
+        "experiment_timestamp": 1780498558.0496702,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.063,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 7015.1,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N6\\N6_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N6\\N6_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11418.3
+  },
+  {
+    "test_id": "N7",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm inside fillet radius, two 6mm mounting holes per leg with countersinks, and 2mm edge rounds per JIS B standard",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2501.2,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 6,
+        "hole_count": 4,
+        "edge_round_radius": 2,
+        "countersink_diameter": 12,
+        "countersink_depth": 2
+      },
+      "material": {
+        "name": "Steel JIS SS400",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.5,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N7",
+        "experiment_timestamp": 1780498565.067354,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N7",
+        "experiment_timestamp": 1780498567.5685933,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.09,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 6516.2,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N7\\N7_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N7\\N7_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 9017.5
+  },
+  {
+    "test_id": "N8",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm inside fillet radius, two 6mm mounting holes per leg with countersinks, and 2mm edge rounds per JIS B standard",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 1926.2,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 6,
+        "hole_count": 4,
+        "edge_round_radius": 2
+      },
+      "material": {
+        "name": "Steel",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 100
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N8",
+        "experiment_timestamp": 1780498574.088168,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N8",
+        "experiment_timestamp": 1780498576.0144036,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.072,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 9015.2,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N8\\N8_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N8\\N8_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10941.5
+  },
+  {
+    "test_id": "N9",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm inside fillet radius, two 6mm mounting holes per leg with countersinks, and 2mm edge rounds per JIS B standard",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2386.2,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50,
+        "height": 50,
+        "thickness": 6,
+        "fillet_radius": 5,
+        "hole_diameter": 6,
+        "hole_count": 4,
+        "edge_round_radius": 2
+      },
+      "material": {
+        "name": "Steel_SS400",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7850,
+        "yield_strength": 250,
+        "tensile_strength": 400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N9",
+        "experiment_timestamp": 1780498585.0329425,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N9",
+        "experiment_timestamp": 1780498587.419154,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.107,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 9016.2,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N9\\N9_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N9\\N9_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11402.5
+  },
+  {
+    "test_id": "N10",
+    "part": "l_bracket",
+    "description": "50x50x6mm steel L-bracket with 5mm inside fillet radius, two 6mm mounting holes per leg with countersinks, and 2mm edge rounds per JIS B standard",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'C3D10'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2330.3,
+    "spec": {
+      "part_type": "l_bracket",
+      "dimensions": {
+        "width": 50.0,
+        "height": 50.0,
+        "thickness": 6.0,
+        "fillet_radius": 5.0,
+        "hole_diameter": 6.0,
+        "hole_count": 4,
+        "edge_round_radius": 2.0
+      },
+      "material": {
+        "name": "Steel (AISI 1018)",
+        "youngs_modulus": 205.0,
+        "poisson_ratio": 0.29,
+        "density": 7870.0,
+        "yield_strength": 370.0,
+        "tensile_strength": 440.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 100,
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "magnitude": 500.0
+        }
+      ],
+      "mesh": {
+        "element_type": "C3D10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N10",
+        "experiment_timestamp": 1780498596.438958,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N10",
+        "experiment_timestamp": 1780498598.7692735,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "l_bracket",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.08,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'C3D10'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": null,
+    "fusion_time_ms": 9515.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N10\\N10_l_bracket.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N10\\N10_l_bracket.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11846.2
+  },
+  {
+    "test_id": "N11",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, 20mm bore, 47mm OD, 14mm width, 8 chrome steel balls, stamped steel cage, double-shielded, per ISO 15",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D1"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'hexahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4552.4,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20.0,
+        "outer_diameter": 47.0,
+        "width": 14.0,
+        "ball_diameter": 7.938,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.1
+      },
+      "material": {
+        "name": "AISI 52100 Chrome Steel",
+        "youngs_modulus": 210.0,
+        "poisson_ratio": 0.3,
+        "density": 7830.0,
+        "yield_strength": 1800.0,
+        "tensile_strength": 2200.0
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 101,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 202,
+          "direction": "z",
+          "magnitude": 5000.0
+        }
+      ],
+      "mesh": {
+        "element_type": "hexahedral",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N11",
+        "experiment_timestamp": 1780498608.2884033,
+        "has_injected_defect": false,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "N11",
+        "experiment_timestamp": 1780498612.8407958,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.085,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'hexahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": null,
+    "fusion_time_ms": 8516.3,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N11\\N11_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N11\\N11_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 13068.8
+  },
+  {
+    "test_id": "N12",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, 20mm bore, 47mm OD, 14mm width, 8 chrome steel balls, stamped steel cage, double-shielded, per ISO 15",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2583.2,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20,
+        "outer_diameter": 47,
+        "width": 14,
+        "ball_diameter": 7.94,
+        "ball_count": 8,
+        "raceway_groove_radius": 3.97
+      },
+      "material": {
+        "name": "SAE 52100",
+        "youngs_modulus": 210,
+        "poisson_ratio": 0.3,
+        "density": 7800,
+        "yield_strength": 2000,
+        "tensile_strength": 2400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": "inner_ring_outer_surface",
+          "dof": [
+            "ux",
+            "uy",
+            "uz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": "outer_ring_outer_surface",
+          "direction": "radial",
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N12",
+        "experiment_timestamp": 1780498621.360161,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N12",
+        "experiment_timestamp": 1780498623.9433303,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.071,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 11520.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N12\\N12_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N12\\N12_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 14104.1
+  },
+  {
+    "test_id": "N13",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, 20mm bore, 47mm OD, 14mm width, 8 chrome steel balls, stamped steel cage, double-shielded, per ISO 15",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 1,
+        "n_warnings": 0,
+        "passed": false,
+        "defect_types": [
+          "D1"
+        ],
+        "defect_details": [
+          {
+            "id": "D1",
+            "sev": "ERROR",
+            "desc": "No boundary conditions defined — model is a free rigid body (6 unconstrained DOF). FEA solver will fail."
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 2,
+      "direct_pass": 0,
+      "corrected_pass": 1,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "1/1 corrected specs passed"
+    },
+    "llm_time_ms": 4376.1,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20,
+        "outer_diameter": 47,
+        "width": 14,
+        "ball_diameter": 7.938,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.1,
+        "cage_type": "stamped_steel",
+        "shield_type": "double"
+      },
+      "material": {
+        "name": "AISI 52100 steel",
+        "youngs_modulus": 210,
+        "poisson_ratio": 0.3,
+        "density": 7810,
+        "yield_strength": 2030,
+        "tensile_strength": 2240
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1000,
+          "dof": [
+            "tx",
+            "ty",
+            "tz",
+            "rx",
+            "ry",
+            "rz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 2000,
+          "direction": [
+            0,
+            -1,
+            0
+          ],
+          "magnitude": 500
+        }
+      ],
+      "mesh": {
+        "element_type": "hex8",
+        "min_jacobian": 0.65,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N13",
+        "experiment_timestamp": 1780498635.4673078,
+        "has_injected_defect": false,
+        "attempt": 1,
+        "stage": "correction"
+      },
+      "_meta": {
+        "test_id": "N13",
+        "experiment_timestamp": 1780498639.8434005,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.074,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 7014.8,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N13\\N13_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N13\\N13_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 11391.0
+  },
+  {
+    "test_id": "N14",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, 20mm bore, 47mm OD, 14mm width, 8 chrome steel balls, stamped steel cage, double-shielded, per ISO 15",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 1,
+        "passed": true,
+        "defect_types": [
+          "D6"
+        ],
+        "defect_details": [
+          {
+            "id": "D6",
+            "sev": "WARN",
+            "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']"
+          }
+        ]
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2525.8,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20,
+        "outer_diameter": 47,
+        "width": 14,
+        "ball_diameter": 7.94,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.05,
+        "cage_type": "stamped steel",
+        "shield_type": "double shield"
+      },
+      "material": {
+        "name": "SAE 52100 chrome steel",
+        "youngs_modulus": 200,
+        "poisson_ratio": 0.3,
+        "density": 7800,
+        "yield_strength": 1600,
+        "tensile_strength": 2400
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 1,
+          "dof": [
+            "ux",
+            "uy",
+            "uz"
+          ],
+          "type": "fixed"
+        },
+        {
+          "node_id": 2,
+          "dof": [
+            "uz"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 3,
+          "direction": "radial inward",
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tetrahedral",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5.0
+      },
+      "metadata": {
+        "test_id": "N14",
+        "experiment_timestamp": 1780498646.861137,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N14",
+        "experiment_timestamp": 1780498649.3869371,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.092,
+    "violations": [
+      {
+        "id": "D6",
+        "sev": "WARN",
+        "desc": "Unknown element_type 'tetrahedral'. Valid: ['hex20', 'hex8', 'shell3', 'shell4', 'tet10', 'tet4', 'wedge6']",
+        "field_path": "mesh.element_type",
+        "standard": "Verdict Library (Stimpson 2007)"
+      }
+    ],
+    "passed_monitor": true,
+    "n_violations": 1,
+    "n_errors": 0,
+    "n_warnings": 1,
+    "defect_detected": null,
+    "fusion_time_ms": 8014.6,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N14\\N14_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N14\\N14_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 10540.5
+  },
+  {
+    "test_id": "N15",
+    "part": "ball_bearing",
+    "description": "6204 deep groove ball bearing, 20mm bore, 47mm OD, 14mm width, 8 chrome steel balls, stamped steel cage, double-shielded, per ISO 15",
+    "has_injected_defect": false,
+    "injected_defect": null,
+    "expected_defect": null,
+    "expected_severity": null,
+    "self_examine_history": [
+      {
+        "attempt": 0,
+        "n_errors": 0,
+        "n_warnings": 0,
+        "passed": true,
+        "defect_types": [],
+        "defect_details": []
+      }
+    ],
+    "self_examine_stats": {
+      "total_attempts": 1,
+      "direct_pass": 1,
+      "corrected_pass": 0,
+      "failed_after_retries": 0,
+      "success_rate": "1/1 specs passed",
+      "correction_efficiency": "N/A"
+    },
+    "llm_time_ms": 2167.9,
+    "spec": {
+      "part_type": "ball_bearing",
+      "dimensions": {
+        "bore_diameter": 20,
+        "outer_diameter": 47,
+        "width": 14,
+        "ball_diameter": 7.94,
+        "ball_count": 8,
+        "raceway_groove_radius": 4.1,
+        "cage_type": "stamped steel",
+        "shield_type": "double-shielded"
+      },
+      "material": {
+        "name": "chrome steel (AISI 52100)",
+        "youngs_modulus": 210,
+        "poisson_ratio": 0.3,
+        "density": 7830,
+        "yield_strength": 2030,
+        "tensile_strength": 2240
+      },
+      "boundary_conditions": [
+        {
+          "node_id": 0,
+          "dof": [
+            "all"
+          ],
+          "type": "fixed"
+        }
+      ],
+      "loads": [
+        {
+          "node_id": 1,
+          "direction": "radial",
+          "magnitude": 1000
+        }
+      ],
+      "mesh": {
+        "element_type": "tet10",
+        "min_jacobian": 0.7,
+        "max_aspect_ratio": 5
+      },
+      "metadata": {
+        "test_id": "N15",
+        "experiment_timestamp": 1780498657.4048615,
+        "has_injected_defect": false,
+        "attempt": 0,
+        "stage": "initial"
+      },
+      "_meta": {
+        "test_id": "N15",
+        "experiment_timestamp": 1780498659.5727339,
+        "has_injected_defect": false,
+        "self_examine": true
+      }
+    },
+    "spec_summary": {
+      "part_type": "ball_bearing",
+      "has_material": true,
+      "has_bc": true,
+      "has_loads": true,
+      "has_mesh": true
+    },
+    "monitor_time_ms": 0.098,
+    "violations": [],
+    "passed_monitor": true,
+    "n_violations": 0,
+    "n_errors": 0,
+    "n_warnings": 0,
+    "defect_detected": null,
+    "fusion_time_ms": 10519.9,
+    "fusion_success": true,
+    "model_info": null,
+    "exports": {
+      "step": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N15\\N15_ball_bearing.step",
+        "ok": true
+      },
+      "f3d": {
+        "path": "C:\\Users\\32506/fusion_bridge\\exports\\N15\\N15_ball_bearing.f3d",
+        "ok": true
+      }
+    },
+    "total_time_ms": 12687.9
+  }
+]
