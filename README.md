@@ -52,15 +52,6 @@ FMforME/
 │       ├── dsV4pro/              # DeepSeek-V4-Pro (old batch, 25 tests)
 │       └── qwen_flash/           # Qwen 3.6 Flash (current batch, 141 tests)
 │
-├── figures/                      # Paper figures
-│   └── bruket.png               # L-bracket model screenshot
-│
-├── paper/                        # LaTeX source and tables
-│   ├── FMforME_Paper.tex         # Main paper
-│   ├── tables_for_paper.tex      # Consolidated LaTeX tables
-│   ├── tables_deepseek_flash.tex # DeepSeek-V4-Flash tables
-│   ├── tables_deepseek_pro.tex   # DeepSeek-V4-Pro tables
-│   └── tables_qwen_flash.tex     # Qwen 3.6 Flash tables
 │
 └── README.md                     # This file
 ```
