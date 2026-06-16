@@ -130,14 +130,7 @@ Wilson 95% confidence intervals shown in brackets. Monitor overhead: ~0.1 ms per
 If you use FMforME in your research, please cite:
 
 ```bibtex
-@article{yin2026fmforme,
-  title={A Three-Layer Runtime Constraint Verification Framework with
-         Self-Correction for AI-Generated Parametric CAD Models},
-  author={Yin, Xiaoyi and Chen, Zihan and Yang, Shen and Lee, Timothy},
-  journal={Applied Sciences},
-  year={2026},
-  publisher={MDPI}
-}
+waiting for accept
 ```
 
 ## License
