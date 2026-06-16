@@ -169,19 +169,3 @@ python run.py
 
 ---
 
-## 样本量
-
-每缺陷类别 **6 个不同测试用例 × 2 次重复 = 12 数据点**。
-
-| 缺陷类别 | 测试数 | 含重复后 |
-|----------|--------|----------|
-| D1 Unconstrained DOF | 6 | 12 |
-| D2 Negative Stiffness | 6 | 12 |
-| D3 Stress Singularity | 6 | 12 |
-| D4 Load-BC Conflict | 6 | 12 |
-| D5 Material Violation | 6 | 12 |
-| D6 Mesh Topology | 6 | 12 |
-| 自然生成 (3零件×10) | 30 | 30 |
-| **总计** | **66** | **102** |
-
-12 数据点足够产生有意义的 Wilson CI，同时控制 API 成本。所有百分比指标附带 **Wilson 95% 置信区间**、**精确二项检验 p 值** 和 **Cohen's h 效应量**。
