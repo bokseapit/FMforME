@@ -6,7 +6,6 @@ Receives validated ModelSpec JSON from the Monitor and drives parametric solid m
 
 - **ISO 4762 Hex Socket Bolt**: Hexagonal head with chamfer, cylindrical shank
 - **JIS B L-Bracket**: L-shaped profile with inside-corner fillet, four M6 mounting holes
-- **ISO 15 Deep Groove Ball Bearing**: Concentric inner/outer rings, circularly patterned rolling elements
 - **ISO 286 Stepped Shaft**: Multi-segment cylindrical shaft with diameter transitions
 
 ## Installation
@@ -55,7 +54,6 @@ The add-in monitors a bridge directory for new validated specifications:
 |---|---|---|
 | Bolt | 6-sided polygon head + cylindrical shank + 45° chamfer | `Sketch.addByCenterStartEnd`, `ExtrudeFeatureInput`, `ChamferFeatureInput` |
 | L-Bracket | 6-point L-profile + corner fillet + 4 M6 holes + edge rounds | `Sketch.addByTwoPointRectangle`, `HoleFeatureInput`, `FilletFeatureInput` |
-| Bearing | Concentric rings + revolved ball profile + circular pattern × N | `RevolveFeatureInput`, `CircularPatternFeatureInput`, `CombineFeatureInput` |
 | Shaft | Multi-segment cylindrical extrusions with diameter transitions | `ExtrudeFeatureInput`, multiple segment construction |
 
 ### Material Assignment
